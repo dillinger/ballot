@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import {
   useGetQuestionByIdQuery,
   usePostAnswerMutation,
-} from '../services/polls-api-slice'
+} from '../services/polls-api'
 import { votesInPercents } from '../utils'
 
 export const Details = () => {

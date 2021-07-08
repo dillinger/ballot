@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Question } from '../types'
 import { config } from '../config'
 
-export const pollApi = createApi({
+export const pollsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: config.API_URL,
   }),
@@ -41,4 +41,4 @@ export const {
   useGetQuestionByIdQuery,
   usePostAnswerMutation,
   useCreateQuestionMutation,
-} = pollApi
+} = pollsApi

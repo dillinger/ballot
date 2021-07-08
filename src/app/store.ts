@@ -1,14 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 
-import { pollApi } from '../services/polls-api-slice'
+import { pollsApi } from '../services/polls-api'
 
 export const store = configureStore({
   reducer: {
-    [pollApi.reducerPath]: pollApi.reducer,
+    [pollsApi.reducerPath]: pollsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(pollApi.middleware),
+    getDefaultMiddleware().concat(pollsApi.middleware),
 })
 
 setupListeners(store.dispatch)

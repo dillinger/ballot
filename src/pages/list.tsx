@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { useGetQuestionsQuery } from '../services/polls-api-slice'
+import { useGetQuestionsQuery } from '../services/polls-api'
 import { creationDate } from '../utils'
 
 import * as styles from './list.css'
