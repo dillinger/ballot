@@ -1,4 +1,4 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle } from '@vanilla-extract/css'
 
 globalStyle('html, body', {
   margin: 0,
@@ -6,6 +6,5 @@ globalStyle('html, body', {
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
+  backgroundColor: '#edf2fb'
 });
-
-globalStyle('code', { fontFamily: `source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace` });
