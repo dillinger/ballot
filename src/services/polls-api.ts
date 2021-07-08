@@ -27,12 +27,12 @@ export const pollsApi = createApi({
       invalidatesTags: ['Questions'],
     }),
     createQuestion: builders.mutation({
-      query: ({ url, ...body }) => ({
-        url: url.slice(1),
+      query: (body) => ({
+        url: 'questions',
         method: 'POST',
-        body
+        body,
       }),
-    })
+    }),
   }),
 })
 
