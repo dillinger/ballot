@@ -6,6 +6,8 @@ import {
 } from '../services/polls-api'
 import { votesInPercents } from '../utils'
 
+import { ErrorBoundary } from '../components/error-boundary'
+
 export const Details = () => {
   // TODO: Define a type
   const { id } = useParams<any>()
@@ -18,21 +20,23 @@ export const Details = () => {
 
   return (
     <>
-      <div>{data?.question}</div>
-      <div>
-        {data?.choices.map((item) => (
-          <div key={item.url}>
-            {item.votes} |{' '}
-            {votesInPercents(
-              item.votes,
-              data.choices.reduce((acc, curr) => acc + curr.votes, 0)
-            )}
-            <button onClick={() => updateChoice({ url: item.url })}>
-              {item.choice}
-            </button>
-          </div>
-        ))}
-      </div>
+      <ErrorBoundary>
+        <div>{data?.question}</div>
+        <div>
+          {data?.choices.map((item) => (
+            <div key={item.url}>
+              {item.votes} |{' '}
+              {votesInPercents(
+                item.votes,
+                data.choices.reduce((acc, curr) => acc + curr.votes, 0)
+              )}
+              <button onClick={() => updateChoice({ url: item.url })}>
+                {item.choice}
+              </button>
+            </div>
+          ))}
+        </div>
+      </ErrorBoundary>
     </>
   )
 }

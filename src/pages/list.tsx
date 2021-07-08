@@ -1,43 +1,13 @@
-import { Link } from 'react-router-dom'
+import { QuestionList } from '../components/question-list/question-list'
 
-import { useGetQuestionsQuery } from '../services/polls-api'
-import { creationDate } from '../utils'
-
-import * as styles from './list.css'
+import { ErrorBoundary } from '../components/error-boundary'
 
 export const List = () => {
-  const {
-    data = [],
-    error,
-    isLoading,
-  } = useGetQuestionsQuery(1, {
-    refetchOnMountOrArgChange: true,
-    skip: false,
-  })
-
-  console.log()
-
-  if (isLoading) {
-    return <>Loading...</>
-  }
-
-  if (error) {
-    throw Error('ERROR')
-  }
-
   return (
-    <div className={styles.questionList}>
-      {data.map((item) => (
-        <Link to={item.url} key={item.url} className={styles.questionBox}>
-          <div className={styles.questionTitle}>{item.question}</div>
-          <div className={styles.questionPublishDate}>
-            {creationDate(item.published_at).format('DD-MM-YYYY')}
-          </div>
-          <div className={styles.questionVotes}>
-            {item.choices.reduce((acc, curr) => acc + curr.votes, 0)}
-          </div>
-        </Link>
-      ))}
-    </div>
+    <>
+      <ErrorBoundary>
+        <QuestionList />
+      </ErrorBoundary>
+    </>
   )
 }
