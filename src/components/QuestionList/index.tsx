@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 
-import { useGetQuestionsQuery } from '../../services/polls-api'
+import { useGetQuestionsQuery } from '../../services/pollsApi'
 import { creationDate } from '../../utils'
+import { LoaderOverlay } from '../Loader'
 
-import * as styles from './question-list.css'
+import * as styles from './styles.css'
 
 export const QuestionList = () => {
   const {
@@ -15,29 +16,27 @@ export const QuestionList = () => {
     skip: false,
   })
 
-  if (isLoading) {
-    return <>Loading...</>
-  }
-
   if (error) {
     throw Error('ERROR')
   }
 
   return (
-    <>
+    <LoaderOverlay text="Loading..." isLoading={isLoading}>
       <div className={styles.questionList}>
         {data.map((item) => (
           <Link to={item.url} key={item.url} className={styles.questionBox}>
             <div className={styles.questionTitle}>{item.question}</div>
-            <div className={styles.questionPublishDate}>
-              {creationDate(item.published_at).format('DD-MM-YYYY')}
-            </div>
-            <div className={styles.questionVotes}>
-              {item.choices.reduce((acc, curr) => acc + curr.votes, 0)}
+            <div className={styles.buttomRow}>
+              <div className={styles.questionVotes}>
+                Votes: {item.choices.reduce((acc, curr) => acc + curr.votes, 0)}
+              </div>
+              <div className={styles.questionPublishDate}>
+                {creationDate(item.published_at).format('MMM D, YYYY h:mm A')}
+              </div>
             </div>
           </Link>
         ))}
       </div>
-    </>
+    </LoaderOverlay>
   )
 }

@@ -4,10 +4,16 @@ export const wrapprer = style({
   padding: '10px'
 })
 
-export const createLink = style({
+export const link = style({
   color: '#fff',
   textTransform: 'uppercase',
-  // fontWeight: 'lighter',
   textDecoration: 'none',
-  fontStyle: 'italic'
+  fontStyle: 'italic',
+  fontSize: '4rem'
+})
+
+export const pageName = style({
+  display: 'block',
+  margin: '0',
+  fontSize: '1.5rem'
 })

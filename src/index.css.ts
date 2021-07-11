@@ -6,4 +6,5 @@ globalStyle('html, body', {
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
-});
+  backgroundColor: '#f6f6f6',
+})
