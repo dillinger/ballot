@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import { wrapper } from './page-layout.css'
+
 type PageLayoutProps = {
   header?: React.ReactNode
   children: React.ReactNode
@@ -9,7 +11,7 @@ type PageLayoutProps = {
 export function PageLayout({ header, children, footer }: PageLayoutProps) {
   return (
     <>
-      {header && <header>{header}</header>}
+      {header && <header className={wrapper}>{header}</header>}
       <main>{children}</main>
       {footer && <footer>{footer}</footer>}
     </>
