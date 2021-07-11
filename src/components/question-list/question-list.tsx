@@ -15,8 +15,6 @@ export const QuestionList = () => {
     skip: false,
   })
 
-  console.log()
-
   if (isLoading) {
     return <>Loading...</>
   }
