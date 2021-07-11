@@ -10,3 +10,12 @@ export interface Question {
   question: string
   url: string
 }
+
+export interface CreateQuestion {
+  question: string
+  choices: string[]
+}
+
+export interface UpdateChoice {
+  url: string
+}
