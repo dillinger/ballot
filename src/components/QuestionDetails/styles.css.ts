@@ -9,7 +9,7 @@ export const wrapper = style({
       padding: '3rem',
       width: '600px',
       margin: '2rem auto 0',
-    }
+    },
   },
 })
 

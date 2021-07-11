@@ -1,7 +1,7 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const wrapprer = style({
-  padding: '10px'
+  padding: '10px',
 })
 
 export const link = style({
@@ -9,11 +9,11 @@ export const link = style({
   textTransform: 'uppercase',
   textDecoration: 'none',
   fontStyle: 'italic',
-  fontSize: '4rem'
+  fontSize: '4rem',
 })
 
 export const pageName = style({
   display: 'block',
   margin: '0',
-  fontSize: '1.5rem'
+  fontSize: '1.5rem',
 })

@@ -11,9 +11,9 @@ export const wrapper = style({
   '@media': {
     'screen and (min-width: 768px)': {
       flexFlow: 'row',
-      justifyContent:'space-evenly',
+      justifyContent: 'space-evenly',
       width: '600px',
-      margin: 'auto'
-    }
+      margin: 'auto',
+    },
   },
 })

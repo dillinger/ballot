@@ -22,11 +22,10 @@ export const QuestionDetails = () => {
 
   return (
     <LoaderOverlay isLoading={isVoting} text="Voting...">
-    <div className={styles.wrapper}>
-      <h2>Question: {data?.question}</h2>
-      <div className={styles.list}>
-        {calculatePercents(data?.choices)
-          .map((choiceItem) => (
+      <div className={styles.wrapper}>
+        <h2>Question: {data?.question}</h2>
+        <div className={styles.list}>
+          {calculatePercents(data?.choices).map((choiceItem) => (
             <div className={styles.row} key={choiceItem.url}>
               <div className={styles.text}>
                 <span>{choiceItem.choice}</span>
@@ -48,8 +47,8 @@ export const QuestionDetails = () => {
               ></i>
             </div>
           ))}
+        </div>
       </div>
-    </div>
     </LoaderOverlay>
   )
 }

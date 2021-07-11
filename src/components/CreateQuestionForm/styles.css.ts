@@ -8,14 +8,14 @@ export const wrapper = style({
     'screen and (min-width: 768px)': {
       width: '600px',
       margin: 'auto',
-    }
+    },
   },
 })
 
 export const formRow = style({
   display: 'flex',
   flexFlow: 'column',
-  marginBottom: '1rem'
+  marginBottom: '1rem',
 })
 
 export const lable = style({
@@ -34,11 +34,10 @@ export const buttonRow = style({
   '@media': {
     'screen and (min-width: 768px)': {
       flexFlow: 'row',
-      justifyContent: 'space-between'
-    }
+      justifyContent: 'space-between',
+    },
   },
 })
-
 
 export const error = style({
   padding: '1rem',

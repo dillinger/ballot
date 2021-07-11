@@ -11,7 +11,7 @@ export const [themeClass, vars] = createTheme({
     white: '#fff',
     black: '#000',
     lightGray: '#f6f6f6',
-    gray: '#ababab'
+    gray: '#ababab',
   },
 })
 
@@ -26,16 +26,18 @@ export const linkButton = style({
   textAlign: 'center',
   verticalAlign: 'baseline',
   fontWeight: 700,
-  textDecoration: 'none'
+  textDecoration: 'none',
 })
 
-export const button = composeStyles(linkButton, style({
-  display: 'inline-block',
-  border: 'none',
-  cursor: 'pointer',
-  width: '100%',
-}))
-
+export const button = composeStyles(
+  linkButton,
+  style({
+    display: 'inline-block',
+    border: 'none',
+    cursor: 'pointer',
+    width: '100%',
+  })
+)
 
 export const buttonType = styleVariants({
   submit: {
@@ -44,6 +46,6 @@ export const buttonType = styleVariants({
   empty: {
     backgroundColor: vars.color.white,
     border: `1px solid ${vars.color.gray}`,
-    color: vars.color.black
-  }
+    color: vars.color.black,
+  },
 })

@@ -50,7 +50,11 @@ export const CreateQuestionForm = () => {
 
   return (
     <LoaderOverlay isLoading={isCreating} text="Creating...">
-      {error && <div className={styles.error}>Something went wrong. Please try again!</div>}
+      {error && (
+        <div className={styles.error}>
+          Something went wrong. Please try again!
+        </div>
+      )}
       <div className={styles.wrapper}>
         <form noValidate onSubmit={handleSubmit}>
           <div className={styles.formRow}>
