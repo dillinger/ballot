@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 
-import { pollsApi } from '../services/polls-api'
+import { pollsApi } from '../services/pollsApi'
 
 export const store = configureStore({
   reducer: {

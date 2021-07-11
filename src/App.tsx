@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import { PageLayout } from './pages/page-layout'
-import { PageCreate } from './pages/page-create'
-import { PageList } from './pages/page-list'
-import { PageDetails } from './pages/page-details'
-import { HomePage } from './pages/page-home'
-import { PageNotFound } from './pages/page-not-found'
+import { PageLayout } from './pages/PageLayout'
+import { PageCreate } from './pages/PageCreate'
+import { PageList } from './pages/pageList'
+import { PageDetails } from './pages/PageDetails'
+import { HomePage } from './pages/PageHome'
+import { PageNotFound } from './pages/PageNotFound'
 import { Header } from './components/Header'
 
 import { themeClass } from './theme.css'
@@ -22,19 +22,19 @@ function App() {
           </Route>
 
           <Route path="/create" exact>
-            <PageLayout header={<Header pageTitle="Create" />}>
+            <PageLayout header={<Header title="Create" />}>
               <PageCreate />
             </PageLayout>
           </Route>
 
           <Route path="/questions" exact>
-            <PageLayout header={<Header pageTitle="Questions" />}>
+            <PageLayout header={<Header title="Questions" />}>
               <PageList />
             </PageLayout>
           </Route>
 
           <Route path="/questions/:id" exact>
-            <PageLayout header={<Header pageTitle="Questions Details" />}>
+            <PageLayout header={<Header title="Details" />}>
               <PageDetails />
             </PageLayout>
           </Route>
