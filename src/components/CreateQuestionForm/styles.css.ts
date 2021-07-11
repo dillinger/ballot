@@ -7,7 +7,7 @@ export const wrapper = style({
   '@media': {
     'screen and (min-width: 768px)': {
       width: '600px',
-      margin: 'auto',
+      margin: '2rem auto',
     },
   },
 })
