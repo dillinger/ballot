@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import { Question } from '../types'
+import { Question, CreateQuestion, UpdateChoice, Choice } from '../types'
 import { config } from '../config'
 
 export const pollsApi = createApi({
@@ -18,15 +18,14 @@ export const pollsApi = createApi({
       query: (id) => `questions/${id}`,
       providesTags: (result, error, id) => [{ type: 'Questions', id }],
     }),
-    postAnswer: builders.mutation({
-      query: ({ url, ...body }) => ({
+    postAnswer: builders.mutation<Choice, UpdateChoice>({
+      query: ({ url }) => ({
         url: url.slice(1),
         method: 'POST',
-        body: body,
       }),
       invalidatesTags: ['Questions'],
     }),
-    createQuestion: builders.mutation({
+    createQuestion: builders.mutation<Question, CreateQuestion>({
       query: (body) => ({
         url: 'questions',
         method: 'POST',
