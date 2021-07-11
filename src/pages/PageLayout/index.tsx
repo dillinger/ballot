@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { wrapper } from './page-layout.css'
+import { wrapper } from './styles.css'
 
 type PageLayoutProps = {
   header?: React.ReactNode

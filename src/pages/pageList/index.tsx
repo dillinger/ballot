@@ -1,6 +1,6 @@
-import { QuestionList } from '../components/question-list/question-list'
+import { QuestionList } from '../../components/QuestionList'
 
-import { ErrorBoundary } from '../components/error-boundary'
+import { ErrorBoundary } from '../../components/ErrorBoundary'
 
 export const PageList = () => {
   return (
